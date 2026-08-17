@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Zac Barnett, lead singer of multi-platinum band American Authors, brings Make Every Day the Best Day of Your Life to corporate events, conferences and universities.">
+<link rel="canonical" href="https://zacharybarnett.com/">
+<link rel="icon" href="img/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zacharybarnett.com/">
+<meta property="og:title" content="Zac Barnett — Make Every Day the Best Day of Your Life">
+<meta property="og:description" content="A billion streams taught him how to write a song. Everything that happened after taught him how to live one. Keynote speaking from the lead singer of American Authors.">
+<meta property="og:image" content="https://zacharybarnett.com/img/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<title>Zac Barnett — Keynote Speaker — Make Every Day the Best Day of Your Life</title>
+<style>
+:root{--ink:#0b0b0d;--ink2:#131317;--paper:#f2f0eb;--mute:#8b8b95;--line:#2b2b33;
+      --amber:#f5c430;--amber2:#ff9a3c}
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+body{background:var(--ink);color:var(--paper);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.02}
+.kick{font:700 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--amber)}
+.lede{color:#c9c7c0;font-size:17px;max-width:52ch}
+.btn{display:inline-block;background:var(--amber);color:#000;font-weight:800;font-size:14px;
+  letter-spacing:.06em;text-transform:uppercase;padding:15px 30px;border-radius:2px;
+  text-decoration:none;cursor:pointer;border:0;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--paper);border:1px solid #6a6a78}
+
+/* annotations, off by default */
+.sec{position:relative;border-bottom:1px solid var(--line)}
+.tag,.note{display:none}
+body.notes .tag{display:block;position:absolute;top:0;left:0;background:var(--amber);color:#000;
+  font:700 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;padding:7px 12px;
+  text-transform:uppercase;z-index:6}
+body.notes .note{display:block;background:#101014;border-left:3px solid var(--amber);
+  color:var(--mute);font:400 13px/1.65 ui-monospace,Menlo,monospace;padding:14px 18px}
+.note b{color:var(--amber)}
+.note .src{color:#5f5f6b}
+
+/* sticky */
+.sticky{position:sticky;top:0;z-index:40;background:rgba(11,11,13,.9);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.sticky .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;gap:14px}
+.mark img{height:34px;width:auto;display:block}
+.sticky .btn{padding:11px 20px;font-size:12px}
+.toggle{background:transparent;border:1px solid #3a3a45;color:#8b8b95;
+  font:700 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;
+  padding:10px 14px;border-radius:2px;cursor:pointer;margin-left:auto;margin-right:6px}
+.toggle:hover{color:var(--paper);border-color:#5a5a68}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:grid;place-items:center;text-align:center;
+  padding:120px 0 90px;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero .veil{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(11,11,13,.72) 0%,rgba(11,11,13,.42) 38%,rgba(11,11,13,.92) 100%)}
+.hero .inner{position:relative;z-index:2;max-width:940px;padding:0 40px}
+.hero h1{font-size:clamp(42px,7.4vw,94px);text-transform:uppercase;margin:20px 0 24px;
+  text-shadow:0 4px 40px rgba(0,0,0,.55)}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.play{display:inline-flex;align-items:center;gap:11px}
+.play i{width:26px;height:26px;border-radius:50%;border:1.5px solid currentColor;
+  display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:9px}
+
+/* proof bar */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line)}
+.stat{background:var(--ink2);padding:32px 18px;text-align:center}
+.stat .n{font-size:30px;font-weight:900;color:var(--amber);letter-spacing:-.02em}
+.stat .l{font:600 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mute);margin-top:8px}
+.logos{background:var(--ink2);padding:22px 40px;text-align:center;
+  font:600 12px/2 ui-monospace,Menlo,monospace;letter-spacing:.16em;color:#6c6c78;
+  text-transform:uppercase;border-top:1px solid var(--line)}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:640px}
+.split .copy{padding:88px 64px;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.split .copy h2{font-size:clamp(30px,3.7vw,50px);text-transform:uppercase}
+.split .pic{position:relative;overflow:hidden;min-height:640px}
+.split .pic img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.split.rev .copy{order:2}
+.vidbadge{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;
+  background:rgba(11,11,13,.32)}
+.vidbadge span{width:86px;height:86px;border-radius:50%;background:rgba(245,196,48,.95);
+  display:flex;align-items:center;justify-content:center}
+.vidbadge span:after{content:"";border-left:24px solid #000;border-top:14px solid transparent;
+  border-bottom:14px solid transparent;margin-left:6px}
+.vidcap{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:14px 18px;
+  background:linear-gradient(0deg,rgba(11,11,13,.9),transparent);
+  font:700 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--amber2)}
+
+/* bands */
+.band{padding:92px 0}
+.band h2{font-size:clamp(30px,3.7vw,50px);text-transform:uppercase;margin-bottom:14px}
+.band .sub{color:var(--mute);max-width:60ch;margin-bottom:46px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--ink2);border:1px solid var(--line);padding:30px;border-radius:3px}
+.card .num{font:800 12px/1 ui-monospace,Menlo,monospace;color:var(--amber);letter-spacing:.16em}
+.card h3{font-size:19px;margin:14px 0 10px;text-transform:uppercase;letter-spacing:0}
+.card p{color:var(--mute);font-size:14.5px;line-height:1.6}
+.takes{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;border-top:1px solid var(--line)}
+.take{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.take .tick{color:var(--amber);font-weight:900;font-size:15px;flex:0 0 auto;margin-top:2px}
+.take span{font-size:15.5px;color:#d5d3cd}
+.take b{color:#fff}
+
+/* testimonials */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.q{background:var(--ink2);border:1px solid var(--line);border-radius:3px;overflow:hidden;
+  display:flex;flex-direction:column}
+.q .ph{height:210px;overflow:hidden}
+.q .ph img{width:100%;height:100%;object-fit:cover}
+.q .body{padding:26px}
+.q p{font-size:15px;line-height:1.62;color:#d5d3cd}
+.q .by{margin-top:18px;font:700 11px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--amber)}
+.q .by span{display:block;color:#6c6c78;font-weight:400;letter-spacing:.06em}
+.played{margin-top:36px;padding-top:26px;border-top:1px solid var(--line);
+  font:600 12px/2.1 ui-monospace,Menlo,monospace;letter-spacing:.12em;
+  text-transform:uppercase;color:#7a7a86}
+.played b{color:var(--paper)}
+
+/* formats */
+.fmt{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fmt .f{border:1px solid var(--line);background:var(--ink2);border-radius:3px;overflow:hidden}
+.fmt .f .ph{height:230px;overflow:hidden}
+.fmt .f .ph img{width:100%;height:100%;object-fit:cover}
+.fmt .f .t{padding:26px}
+.fmt .f h3{font-size:18px;text-transform:uppercase;margin-bottom:10px}
+.fmt .f p{color:var(--mute);font-size:14.5px}
+.gap{height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;border-bottom:1px dashed #7a3326;background:repeating-linear-gradient(45deg,#241512 0 14px,#1b100e 14px 28px);
+  color:#e0705c;font:700 11px/1.4 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-align:center;padding:20px}
+.gap small{color:#96564a;font-weight:400;letter-spacing:.04em;text-transform:none;font-size:11.5px}
+
+/* chips + pull */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid #3a3a45;border-radius:100px;padding:12px 22px;
+  font:700 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;
+  text-transform:uppercase;color:#c9c7c0}
+.pull{padding:104px 0;text-align:center;background:var(--ink2)}
+.pull p{font-size:clamp(24px,3.5vw,44px);font-weight:800;line-height:1.2;max-width:21ch;
+  margin:0 auto;letter-spacing:-.02em}
+.pull p em{font-style:normal;color:var(--amber)}
+
+/* book */
+.book{position:relative;overflow:hidden}
+.book>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%;z-index:0}
+.book .veil{position:absolute;inset:0;z-index:1;background:rgba(9,9,11,.8)}
+.book .inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:64px;
+  padding:100px 40px;max-width:1180px;margin:0 auto;align-items:center}
+.book h2{font-size:clamp(36px,5.2vw,72px);text-transform:uppercase;margin-bottom:18px}
+.form{background:rgba(19,19,23,.92);border:1px solid var(--line);padding:34px;border-radius:3px}
+.field{margin-bottom:14px}
+.field label{display:block;font:700 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--mute);margin-bottom:7px}
+.field .in{background:#0d0d10;border:1px solid #33333d;height:44px;border-radius:2px;width:100%;color:var(--paper);font:400 15px/1.4 inherit;padding:0 12px;font-family:inherit}
+.field textarea.in{padding:12px;resize:vertical}
+.field .in:focus{outline:0;border-color:var(--amber)}
+.field .in.tall{height:92px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mail{margin-top:18px;font:600 13px/1.6 ui-monospace,Menlo,monospace;color:var(--mute)}
+.mail b{color:var(--amber)}
+footer{padding:64px 44px 54px;text-align:center;color:#55555f;
+  font:500 12px/1.9 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase}
+
+@media(max-width:880px){
+  .wrap{padding:0 22px}.stats{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}.split.rev .copy{order:0}
+  .split .copy{padding:56px 24px}.split .pic{min-height:360px}
+  .grid3,.quotes,.fmt,.takes{grid-template-columns:1fr}
+  .book .inner{grid-template-columns:1fr;padding:64px 22px}
+  .sticky .wrap{padding:12px 22px}.toggle{display:none}
+}
+</style>
+</head>
+<body>
+<!--
+  ============================================================================
+  ZAC BARNETT  ·  zacharybarnett.com
+  To change any wording: use your browser's Find (Cmd+F) for the word "EDIT:"
+  to jump between the editable blocks. Type over the words BETWEEN the tags,
+  never change the tags themselves. Commit, and the live site updates itself
+  in about half a minute.
+  Photos live in the img/ folder. To swap one, upload a replacement with the
+  SAME filename and it just appears.
+  ============================================================================
+-->
+
+<div class="sticky"><div class="wrap">
+  <div class="mark"><img src="img/logo.png" alt="Zac Barnett"></div>
+  <a class="btn" href="#book">Check Availability</a>
+</div></div>
+
+<!-- 01 HERO -->
+<section class="sec">
+  <div class="hero">
+    <img src="img/hero.jpg" alt="">
+    <div class="veil"></div>
+    <div class="inner">
+      <!-- ================================== EDIT: HERO — the small line above the headline -->
+      <div class="kick">Zac Barnett · Lead Singer, American Authors</div>
+      <!-- ================== EDIT: HERO — the big headline. <em>...</em> is the yellow part -->
+      <h1>Make Every Day<br>The <em>Best Day</em><br>Of Your Life</h1>
+      <p class="lede" style="margin:0 auto">A billion streams taught him how to write a song.
+      Everything that happened after taught him how to live one.</p>
+      <div class="cta-row">
+        <a class="btn" href="#book">Check Availability</a>
+        <a class="btn ghost play" href="#"><i>&#9654;</i> Watch the Reel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 PROOF -->
+<section class="sec">
+  <!-- ======================== EDIT: THE FIVE NUMBERS — change the figure and its label -->
+      <div class="stats">
+    <div class="stat"><div class="n">1B+</div><div class="l">Global Streams</div></div>
+    <div class="stat"><div class="n">600+</div><div class="l">Film · TV · Ad · Sports Placements</div></div>
+    <div class="stat"><div class="n">#11</div><div class="l">Billboard Hot 100</div></div>
+    <div class="stat"><div class="n">Multi-Platinum</div><div class="l">Recording Artist</div></div>
+    <div class="stat"><div class="n">Worldwide</div><div class="l">Tours &amp; Performances</div></div>
+  </div>
+  <!-- =================== EDIT: CREDITS STRIP — add new stages, shows or festivals here -->
+      <div class="logos">OneRepublic · O.A.R. · The Fray · Andy Grammer · The Revivalists · Lollapalooza · Firefly · BottleRock · Reading &amp; Leeds · Warped Tour · Ellen · Letterman · Seth Meyers · CONAN · GMA · VH1</div>
+</section>
+
+<!-- 03 HOOK -->
+<section class="sec">
+  <div class="split">
+    <div class="copy">
+      <div class="kick">The Song You Already Know</div>
+      <!-- ========================================================= EDIT: SECTION 3 HEADING -->
+      <h2>You've Heard It<br>A Thousand Times</h2>
+      <p class="lede">Four kids met at Berklee, chased an unlikely dream to New York, and spent years playing to almost nobody. Then "Best Day of My Life" went off. Multi-platinum, a billion streams, stages all over the world.</p>
+      <p class="lede">Behind the platinum records were the same things that are in everyone's life: loss, failure, fear, unexpected change, starting over. Zac spent a decade singing those five words before he understood what they actually meant.</p>
+    </div>
+    <div class="pic"><img src="img/hook.jpg" alt=""></div>
+  </div>
+</section>
+
+<!-- 04 KEYNOTE -->
+<section class="sec">
+  <div class="split rev">
+    <div class="copy">
+      <div class="kick">The Keynote</div>
+      <!-- ========================================================= EDIT: SECTION 4 HEADING -->
+      <h2>Make Every Day<br>The Best Day<br>Of Your Life</h2>
+      <p class="lede">What if the "best day of your life" isn't something that happens to you, but something you choose to create?</p>
+      <p class="lede">Equal parts storytelling, humour, music and motivation. Zac uses the rise of American Authors, and everything that went wrong around it, as a working metaphor for the thing we all deal with: we can't control what happens to us, but we can control the mindset we bring to what happens next.</p>
+      <div><a class="btn" href="#book">Bring This To Your Event</a></div>
+    </div>
+    <div class="pic">
+      <img src="img/keynote.jpg" alt="">
+      <div class="vidbadge"><span></span></div>
+      <div class="vidcap">Video slot 2 · 2 to 3 min keynote excerpt · poster frame shown</div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PULL -->
+<section class="sec">
+  <!-- ================================================================ EDIT: PULL QUOTE -->
+      <div class="pull"><p>You don't get to choose what today brings you.<br><em>You do get to choose what you bring to today.</em></p></div>
+</section>
+
+<!-- 06 TOPICS -->
+<section class="sec">
+  <div class="band"><div class="wrap">
+    <div class="kick">Six Threads</div>
+    <h2>What He Covers</h2>
+    <p class="sub">Tailored to the room. Pick the emphasis, Zac builds the set around it.</p>
+    <!-- =================================== EDIT: THE SIX TOPICS — each card is one block -->
+      <div class="grid3">
+      <div class="card"><div class="num">01</div><h3>The Power of a Positive Mindset</h3><p>The difference between what we can control and what we can't, and putting energy into the one thing that stays ours.</p></div>
+      <div class="card"><div class="num">02</div><h3>Letting Go of Ego</h3><p>How success quietly changes how we see ourselves, and why identity shouldn't depend on accomplishments.</p></div>
+      <div class="card"><div class="num">03</div><h3>Adapting to Life's Curveballs</h3><p>Careers and lives rarely follow the plan. Zac's biggest growth started when things went sideways.</p></div>
+      <div class="card"><div class="num">04</div><h3>The Power of Saying Yes</h3><p>Why curiosity and a willingness to step into the unknown creates opportunities no five-year plan predicted.</p></div>
+      <div class="card"><div class="num">05</div><h3>Turning Setbacks Into the Next Verse</h3><p>Songwriting as a resilience model: edit, adapt, experiment, keep moving. Don't get attached to draft one.</p></div>
+      <div class="card"><div class="num">06</div><h3>Positivity Is Contagious</h3><p>The energy you bring into a room moves your team, your family and your community, not just you.</p></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 07 TAKEAWAYS -->
+<section class="sec">
+  <div class="band"><div class="wrap">
+    <div class="kick">The Outcome</div>
+    <h2>What Your Room<br>Leaves With</h2>
+    <p class="sub">Section 06 is what he talks about. This is what lands.</p>
+    <!-- ======================================================= EDIT: THE EIGHT TAKEAWAYS -->
+      <div class="takes">
+      <div class="take"><span class="tick">&#10003;</span><span>A practical way to <b>control their response</b> instead of trying to control every outcome</span></div>
+      <div class="take"><span class="tick">&#10003;</span><span>Positivity reframed, not ignoring difficulty but <b>choosing how to move through it</b></span></div>
+      <div class="take"><span class="tick">&#10003;</span><span>Permission to <b>let go of ego</b> and separate self-worth from titles and validation</span></div>
+      <div class="take"><span class="tick">&#10003;</span><span>Tools for <b>staying adaptable</b> when careers or circumstances suddenly change</span></div>
+      <div class="take"><span class="tick">&#10003;</span><span>A greater willingness to <b>say yes</b>, even when the destination isn't obvious</span></div>
+      <div class="take"><span class="tick">&#10003;</span><span>A framework for treating failure as <b>part of the creative process</b>, not the end of it</span></div>
+      <div class="take"><span class="tick">&#10003;</span><span>An understanding of how one person's energy can <b>lift an entire team</b></span></div>
+      <div class="take"><span class="tick">&#10003;</span><span>A renewed appreciation for the present, making <b>today</b> count instead of waiting</span></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 08 TESTIMONIALS -->
+<section class="sec">
+  <div class="band"><div class="wrap">
+    <div class="kick">Don't Take Our Word</div>
+    <h2>Proof It Works</h2>
+    <p class="sub">Each quote sits on a photo of the thing the quote is describing.</p>
+    <!-- =========================== EDIT: TESTIMONIALS — quote, then name, then job title -->
+      <div class="quotes">
+      <div class="q"><div class="ph"><img src="img/proof1.jpg" alt=""></div><div class="body">
+        <p>"Zac's energy was contagious, keeping the audience engaged from start to finish… he has a unique ability to connect with people on a personal level. If you're looking for a speaker who is dynamic, engaging, and leaves a lasting impact, Zac Barnett is the perfect choice."</p>
+        <div class="by">Kelsey Trimble<span>Learning &amp; Performance Specialist, Black Hills Federal Credit Union</span></div></div></div>
+      <div class="q"><div class="ph"><img src="img/proof2.jpg" alt=""></div><div class="body">
+        <p>"He's successfully bridged the gap between music and business. He's a rockstar who truly gets it… inspiring not just because of what he's overcome, but because of his relentless optimism and his incredibly sharp mind for business."</p>
+        <div class="by">Garret Myers<span>CEO, Cypher</span></div></div></div>
+      <div class="q"><div class="ph"><img src="img/proof3.jpg" alt=""></div><div class="body">
+        <p>"Zac wasn't just a speaker — he was an experience. His story, his energy, and the way he connects with a room is something you don't see very often. No ego, no fluff. The guy is the real deal."</p>
+        <div class="by">Chad Elizondo<span>CRO, Cypher</span></div></div></div>
+    </div>
+    <!-- ======================== EDIT: RECENT CLIENTS — add each new booking to this line -->
+      <div class="played">Recently on stage for &nbsp;·&nbsp; <b>Black Hills Federal Credit Union — Development Day</b> &nbsp;·&nbsp; <b>D2D Con — Salt Lake City</b> &nbsp;·&nbsp; <b>Cypher Tech</b> &nbsp;·&nbsp; <b>San Diego State University — Music Business Club</b></div>
+  </div></div>
+</section>
+
+<!-- 09 FORMATS -->
+<section class="sec">
+  <div class="band"><div class="wrap">
+    <div class="kick">Book One Person. Cover Three Slots.</div>
+    <h2>More Than<br>A Keynote</h2>
+    <p class="sub">At D2D Con, Zac delivered the keynote, performed at the sponsor booth, and DJ'd the after-party. Most events are hiring three suppliers to do that.</p>
+    <!-- ====================== EDIT: THE THREE FORMATS — the DJ card needs a photo adding -->
+      <div class="fmt">
+      <div class="f"><div class="ph"><img src="img/fmt1.jpg" alt=""></div><div class="t"><h3>The Keynote</h3><p>45 to 60 minutes, tailored to your audience and your theme. Storytelling, humour and live music woven through.</p></div></div>
+      <div class="f"><div class="ph"><img src="img/fmt2.jpg" alt=""></div><div class="t"><h3>Live Performance</h3><p>Acoustic set, booth activation, or the song itself as the closing moment of your general session.</p></div></div>
+      <div class="f"><div class="gap">MISSING ASSET<small>No DJ or decks photo exists in the folder. Needs sourcing from the D2D Con after-party.</small></div><div class="t"><h3>DJ / After-Party</h3><p>He'll headline your evening too. Same night, same fee conversation, one point of contact.</p></div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 10 WHO -->
+<section class="sec">
+  <div class="band"><div class="wrap">
+    <div class="kick">Fits Your Room</div>
+    <h2>Who It's For</h2>
+    <p class="sub">Same story, retuned for the audience in front of him.</p>
+    <!-- ========================================= EDIT: WHO IT IS FOR — one span per chip -->
+      <div class="chips">
+      <span class="chip">Corporate &amp; Leadership</span><span class="chip">Employee Development Days</span>
+      <span class="chip">Sales &amp; Entrepreneur Conferences</span><span class="chip">Colleges &amp; Universities</span>
+      <span class="chip">Creative &amp; Music Industry</span><span class="chip">Associations &amp; Conferences</span>
+      <span class="chip">Opening or Closing Keynote</span>
+    </div>
+  </div></div>
+</section>
+
+<!-- 11 ABOUT -->
+<section class="sec">
+  <div class="split">
+    <div class="copy">
+      <div class="kick">The Long Version</div>
+      <!-- =============================== EDIT: ABOUT — the only long biography on the page -->
+      <h2>About Zac</h2>
+      <p class="lede">Frontman and co-founder of multi-platinum band <b>American Authors</b>. Berklee College of Music to a career spanning hit records, worldwide touring, television, songwriting and more than a billion streams.</p>
+      <p class="lede">He's written with and for <b>Carlos Santana, Rob Thomas, Michael Bolton, lovelytheband</b> and <b>Lit</b>, including Santana's "Move" featuring Rob Thomas and American Authors, which reunited the pair more than two decades after their first hit together.</p>
+      <p class="lede">Today he's still writing and touring with American Authors, taking the keynote across the country, and building <b>Bogoo's Best Day</b>, a children's music project about positivity and self-worth whose first single, "Celebrate," hit <b>#1 on SiriusXM</b>.</p>
+    </div>
+    <div class="pic"><img src="img/about.jpg" alt=""></div>
+  </div>
+</section>
+
+<!-- 12 BOOK -->
+<section class="sec" id="book">
+  <div class="book">
+    <img src="img/book.jpg" alt="">
+    <div class="veil"></div>
+    <div class="inner">
+      <div>
+        <div class="kick">Let's Talk</div>
+        <!-- =========================================================== EDIT: BOOKING SECTION -->
+      <h2>Book Zac</h2>
+        <p class="lede">Keynotes, corporate events, conferences, universities and private events. Tell us the date and the room and you'll get a reply, not an auto-responder.</p>
+      </div>
+      <form class="form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- ================================= EDIT: PASTE YOUR WEB3FORMS KEY ON THE NEXT LINE -->
+      <input type="hidden" name="access_key" value="PASTE-YOUR-WEB3FORMS-KEY-HERE">
+        <input type="hidden" name="subject" value="New keynote enquiry from zacharybarnett.com">
+        <input type="checkbox" name="botcheck" style="display:none">
+        <div class="two"><div class="field"><label for="f1">Name</label><input class="in" id="f1" name="name" required></div>
+          <div class="field"><label for="f2">Organisation</label><input class="in" id="f2" name="organisation"></div></div>
+        <div class="two"><div class="field"><label for="f3">Email</label><input class="in" id="f3" type="email" name="email" required></div>
+          <div class="field"><label for="f4">Event Date</label><input class="in" id="f4" name="event_date" placeholder="or approximate"></div></div>
+        <div class="two"><div class="field"><label for="f5">Event Type</label><input class="in" id="f5" name="event_type"></div>
+          <div class="field"><label for="f6">Audience Size</label><input class="in" id="f6" name="audience_size"></div></div>
+        <div class="field"><label for="f7">Tell us about the event</label><textarea class="in tall" id="f7" name="message"></textarea></div>
+        <button class="btn" type="submit" style="width:100%">Send Enquiry</button>
+        <!-- ===================================================== EDIT: BOOKING EMAIL ADDRESS -->
+      <div class="mail">Or email direct at <b><a href="mailto:Mwiebrecht@the.team" style="color:inherit">Mwiebrecht@the.team</a></b></div>
+      </form></div>
+    </div>
+  </div>
+</section>
+
+<footer><img src="img/logo-large.png" alt="Zac Barnett" style="height:96px;width:auto;margin:0 auto 26px;opacity:.95"><!-- ================================= EDIT: FOOTER — swap these for real social links -->
+      Motivational Keynote Speaker · &copy; 2026<br>Instagram · TikTok · YouTube · Spotify</footer>
+<script>
+document.documentElement.style.scrollBehavior='smooth';
+var seen=false;
+function countUp(){
+  if(seen) return; var bar=document.querySelector('.stats');
+  if(!bar || bar.getBoundingClientRect().top > innerHeight-80) return; seen=true;
+  document.querySelectorAll('.stat .n').forEach(function(el){
+    var m=el.textContent.match(/^([\d.]+)(B\+|\+|)$/); if(!m) return;
+    var end=parseFloat(m[1]), suf=m[2], t0=null;
+    function step(t){ if(!t0)t0=t; var p=Math.min((t-t0)/1100,1);
+      el.textContent=(end<10?(end*p).toFixed(1):Math.round(end*p))+suf;
+      if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  });
+}
+addEventListener('scroll',countUp,{passive:true}); countUp();
+</script>
+</body>
+</html>
