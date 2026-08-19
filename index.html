@@ -438,35 +438,52 @@ addEventListener('scroll',countUp,{passive:true}); countUp();
    Paste the Apps Script web app URL between the quotes below. It ends in /exec
    ============================================================================ */
 var ENQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8sF9YyPXZU08w6QCPXIvexbvqNo98aU2FwFwYUN-kiPTpvH2drvWQFZPqYeG6RkJeQw/exec";
+var WEB3FORMS_KEY    = "497abf92-af86-4662-8a06-fdf878859a43";
 
 (function(){
   var f=document.getElementById('enquiry'), btn=document.getElementById('sendbtn'),
       msg=document.getElementById('formmsg');
   if(!f) return;
+
   f.addEventListener('submit', function(ev){
     ev.preventDefault();
     msg.className=''; msg.textContent='';
     var d={}; new FormData(f).forEach(function(v,k){ d[k]=v; });
-    if(d.company_website){ return; }                      // silent bot trap
+    if(d.company_website){ return; }
     if(!d.name || !d.email || d.email.indexOf('@')<0){
       msg.className='bad'; msg.textContent='Please add your name and a valid email.'; return;
     }
-    if(ENQUIRY_ENDPOINT.indexOf('PASTE')===0){
-      msg.className='bad'; msg.textContent='Form not connected yet.'; return;
-    }
     d.page=location.href; d.sent=new Date().toISOString();
     btn.disabled=true; btn.textContent='Sending...';
-    fetch(ENQUIRY_ENDPOINT,{method:'POST',mode:'no-cors',
-      headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
-    .then(function(){
-      f.reset(); btn.textContent='Send Enquiry';
-      msg.className='ok';
-      msg.textContent='Thanks. That has gone straight through, you will hear back shortly.';
-    })
-    .catch(function(){
-      btn.disabled=false; btn.textContent='Send Enquiry';
-      msg.className='bad';
-      msg.textContent='Something went wrong. Please email Mwiebrecht@the.team directly.';
+
+    var toSheet = fetch(ENQUIRY_ENDPOINT,{method:'POST',mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)});
+
+    var toInbox = fetch('https://api.web3forms.com/submit',{method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: 'Keynote enquiry — ' + (d.organisation || d.name),
+        from_name: 'zacharybarnett.com',
+        replyto: d.email,
+        Name: d.name, Organisation: d.organisation, Email: d.email,
+        'Event date': d.event_date, 'Event type': d.event_type,
+        'Audience size': d.audience_size, 'Heard about Zac via': d.heard,
+        Message: d.message
+      })});
+
+    Promise.allSettled([toSheet, toInbox]).then(function(r){
+      var sheetOk = r[0].status === 'fulfilled';
+      btn.textContent='Send Enquiry';
+      if(sheetOk){
+        f.reset(); btn.disabled=true;
+        msg.className='ok';
+        msg.textContent='Thanks. That has gone straight through, you will hear back shortly.';
+      } else {
+        btn.disabled=false;
+        msg.className='bad';
+        msg.textContent='Something went wrong. Please email Mwiebrecht@the.team directly.';
+      }
     });
   });
 })();
