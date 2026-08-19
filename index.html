@@ -166,6 +166,10 @@ body.notes .note{display:block;background:#101014;border-left:3px solid var(--am
 .field .in:focus{outline:0;border-color:var(--amber)}
 .field .in.tall{height:92px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#formmsg{margin-top:14px;font:600 13px/1.5 ui-monospace,Menlo,monospace;min-height:1em}
+#formmsg.ok{color:#5fd08a}
+#formmsg.bad{color:#e0705c}
+#sendbtn[disabled]{opacity:.55;cursor:default}
 .mail{margin-top:18px;font:600 13px/1.6 ui-monospace,Menlo,monospace;color:var(--mute)}
 .mail b{color:var(--amber)}
 footer{padding:64px 44px 54px;text-align:center;color:#55555f;
@@ -391,21 +395,19 @@ footer{padding:64px 44px 54px;text-align:center;color:#55555f;
       <h2>Book Zac</h2>
         <p class="lede">Keynotes, corporate events, conferences, universities and private events. Tell us the date and the room and you'll get a reply, not an auto-responder.</p>
       </div>
-      <form class="form" action="https://api.web3forms.com/submit" method="POST">
-        <!-- ================================= EDIT: PASTE YOUR WEB3FORMS KEY ON THE NEXT LINE -->
-      <input type="hidden" name="access_key" value="PASTE-YOUR-WEB3FORMS-KEY-HERE">
-        <input type="hidden" name="subject" value="New keynote enquiry from zacharybarnett.com">
-        <input type="checkbox" name="botcheck" style="display:none">
+      <form class="form" id="enquiry" novalidate>
         <div class="two"><div class="field"><label for="f1">Name</label><input class="in" id="f1" name="name" required></div>
           <div class="field"><label for="f2">Organisation</label><input class="in" id="f2" name="organisation"></div></div>
         <div class="two"><div class="field"><label for="f3">Email</label><input class="in" id="f3" type="email" name="email" required></div>
           <div class="field"><label for="f4">Event Date</label><input class="in" id="f4" name="event_date" placeholder="or approximate"></div></div>
         <div class="two"><div class="field"><label for="f5">Event Type</label><input class="in" id="f5" name="event_type"></div>
           <div class="field"><label for="f6">Audience Size</label><input class="in" id="f6" name="audience_size"></div></div>
+        <div class="field"><label for="f8">How did you hear about Zac?</label><input class="in" id="f8" name="heard"></div>
         <div class="field"><label for="f7">Tell us about the event</label><textarea class="in tall" id="f7" name="message"></textarea></div>
-        <button class="btn" type="submit" style="width:100%">Send Enquiry</button>
-        <!-- ===================================================== EDIT: BOOKING EMAIL ADDRESS -->
-      <div class="mail">Or email direct at <b><a href="mailto:Mwiebrecht@the.team" style="color:inherit">Mwiebrecht@the.team</a></b></div>
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true"
+               style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <button class="btn" id="sendbtn" type="submit" style="width:100%">Send Enquiry</button>
+        <p id="formmsg" role="status" aria-live="polite"></p>
       </form></div>
     </div>
   </div>
@@ -429,6 +431,45 @@ function countUp(){
   });
 }
 addEventListener('scroll',countUp,{passive:true}); countUp();
+</script>
+<script>
+/* ============================================================================
+   EDIT: BOOKING FORM ENDPOINT
+   Paste the Apps Script web app URL between the quotes below. It ends in /exec
+   ============================================================================ */
+var ENQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8sF9YyPXZU08w6QCPXIvexbvqNo98aU2FwFwYUN-kiPTpvH2drvWQFZPqYeG6RkJeQw/exec";
+
+(function(){
+  var f=document.getElementById('enquiry'), btn=document.getElementById('sendbtn'),
+      msg=document.getElementById('formmsg');
+  if(!f) return;
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    msg.className=''; msg.textContent='';
+    var d={}; new FormData(f).forEach(function(v,k){ d[k]=v; });
+    if(d.company_website){ return; }                      // silent bot trap
+    if(!d.name || !d.email || d.email.indexOf('@')<0){
+      msg.className='bad'; msg.textContent='Please add your name and a valid email.'; return;
+    }
+    if(ENQUIRY_ENDPOINT.indexOf('PASTE')===0){
+      msg.className='bad'; msg.textContent='Form not connected yet.'; return;
+    }
+    d.page=location.href; d.sent=new Date().toISOString();
+    btn.disabled=true; btn.textContent='Sending...';
+    fetch(ENQUIRY_ENDPOINT,{method:'POST',mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
+    .then(function(){
+      f.reset(); btn.textContent='Send Enquiry';
+      msg.className='ok';
+      msg.textContent='Thanks. That has gone straight through, you will hear back shortly.';
+    })
+    .catch(function(){
+      btn.disabled=false; btn.textContent='Send Enquiry';
+      msg.className='bad';
+      msg.textContent='Something went wrong. Please email Mwiebrecht@the.team directly.';
+    });
+  });
+})();
 </script>
 </body>
 </html>
